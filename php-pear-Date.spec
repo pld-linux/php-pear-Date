@@ -1,17 +1,17 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Date
-%define		_status		beta
+%define		_status		stable
 %define		_pearname	%{_class}
 
 Summary:	%{_pearname} - Date and Time Zone Classes
 Summary(pl):	%{_pearname} - Klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
 Version:	1.4
-Release:	0.rc1
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}rc1.tgz
-# Source0-md5:	f462b8d8d12bc6c615a91640a2226d3d
+Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+# Source0-md5:	e8506ba23e9a58c64d672b7ea811908f
 URL:		http://pear.php.net/package/Date/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -41,21 +41,21 @@ ci±gów znakowych pomiêdzy kalendarzem gregoriañskim i ludzkim.
 Ta klasa ma w PEAR status: %{_status}.
 
 %prep
-%setup -q -c -n %{name}-%{version}rc1
+%setup -q -c
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
-install %{_pearname}-%{version}rc1/%{_class}.php $RPM_BUILD_ROOT%{php_pear_dir}/
-install %{_pearname}-%{version}rc1/%{_class}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
+install %{_pearname}-%{version}/%{_class}.php $RPM_BUILD_ROOT%{php_pear_dir}/
+install %{_pearname}-%{version}/%{_class}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}rc1/tests
+%doc %{_pearname}-%{version}/{tests,TODO}
 %dir %{php_pear_dir}/%{_class}
 %{php_pear_dir}/*.php
 %{php_pear_dir}/%{_class}/*.php
