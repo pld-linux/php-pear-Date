@@ -6,12 +6,12 @@
 Summary:	%{_pearname} - Date and Time Zone Classes
 Summary(pl):	%{_pearname} - Klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
-Version:	1.4
+Version:	1.4.1
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	e8506ba23e9a58c64d672b7ea811908f
+# Source0-md5:	e3c849be945399b56706e75dbd6f9a15
 URL:		http://pear.php.net/package/Date/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
