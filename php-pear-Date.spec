@@ -27,7 +27,7 @@ system date stamps, so you can display calendars and compare dates
 that date pre 1970 and post 2038. This package also provides a class
 to convert date strings between Gregorian and Human calendar formats.
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Podstawowe klasy do pokazywania i manipulowania datami, czasem i
