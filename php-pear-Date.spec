@@ -1,8 +1,8 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Date
 %define		_pearname	%{_class}
-Summary:	%{_class} - Date and Time Zone Classes
-Summary(pl):	%{_class} - Klasy daty i stref czasowych
+Summary:	%{_pearname} - Date and Time Zone Classes
+Summary(pl):	%{_pearname} - Klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
 Version:	1.2
 Release:	1
