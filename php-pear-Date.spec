@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Generic classes for representation and manipulation of dates, times
 and time zones without the need of timestamps, which is a huge
-limitation for php programs. Includes time zone data, time zone
+limitation for PHP programs. Includes time zone data, time zone
 conversions and many date/time conversions. It does not rely on 32-bit
 system date stamps, so you can display calendars and compare dates
 that date pre 1970 and post 2038. This package also provides a class
@@ -32,7 +32,7 @@ In PEAR status of this package is: %{_status}.
 %description -l pl
 Podstawowe klasy do pokazywania i manipulowania datami, czasem i
 strefami czasowymi bez potrzeby u¿ywania timestamps, które s± ogromnym
-ograniczeniem programów php. Zawiera konwersjê stref czasowych, czasu,
+ograniczeniem programów PHP. Zawiera konwersjê stref czasowych, czasu,
 daty, bazowane na Date::Calc. Nie zale¿y od 32-bitowych systemowych
 timestampów, wiêc mo¿e wy¶wietlaæ kalendarz oraz porównywaæ daty prze
 1970 i po 2038 roku. Ten pakiet zawiera tak¿e klasy do konwersji
