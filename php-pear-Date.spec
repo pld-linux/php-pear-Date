@@ -3,8 +3,8 @@
 %define		_status		stable
 %define		_pearname	%{_class}
 
-Summary:	%{_pearname} - Date and Time Zone Classes
-Summary(pl):	%{_pearname} - Klasy daty i stref czasowych
+Summary:	%{_pearname} - date and time zone classes
+Summary(pl):	%{_pearname} - klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
 Version:	1.4.3
 Release:	1
@@ -32,11 +32,12 @@ In PEAR status of this package is: %{_status}.
 %description -l pl
 Podstawowe klasy do pokazywania i manipulowania datami, czasem i
 strefami czasowymi bez potrzeby u¿ywania timestamps, które s± ogromnym
-ograniczeniem programów PHP. Zawiera konwersjê stref czasowych, czasu,
-daty, bazowane na Date::Calc. Nie zale¿y od 32-bitowych systemowych
-timestampów, wiêc mo¿e wy¶wietlaæ kalendarz oraz porównywaæ daty prze
-1970 i po 2038 roku. Ten pakiet zawiera tak¿e klasy do konwersji
-ci±gów znakowych pomiêdzy kalendarzem gregoriañskim i ludzkim.
+ograniczeniem programów w PHP. Zawiera konwersjê stref czasowych,
+czasu, daty, bazowane na Date::Calc. Nie zale¿y od 32-bitowych
+systemowych timestampów, wiêc mo¿e wy¶wietlaæ kalendarz oraz
+porównywaæ daty prze 1970 i po 2038 roku. Ten pakiet zawiera tak¿e
+klasy do konwersji ci±gów znakowych pomiêdzy kalendarzem gregoriañskim
+i ludzkim.
 
 Ta klasa ma w PEAR status: %{_status}.
 
