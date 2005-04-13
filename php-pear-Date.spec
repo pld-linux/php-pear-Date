@@ -7,11 +7,12 @@ Summary:	%{_pearname} - date and time zone classes
 Summary(pl):	%{_pearname} - klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
 Version:	1.4.3
-Release:	2
+Release:	3
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	e1ac9ae6469584e6f887b6fd020b3ae1
+Patch0:		%{name}-tz-baltic-hasdst.patch
 URL:		http://pear.php.net/package/Date/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -43,6 +44,8 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
+cd %{_class}-%{version}
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
