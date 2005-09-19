@@ -14,7 +14,7 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	e1ac9ae6469584e6f887b6fd020b3ae1
 Patch0:		%{name}-tz-baltic-hasdst.patch
 URL:		http://pear.php.net/package/Date/
-BuildRequires:	rpm-php-pearprov >= 4.4.2-10.2
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
