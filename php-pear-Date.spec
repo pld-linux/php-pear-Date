@@ -7,14 +7,14 @@ Summary:	%{_pearname} - date and time zone classes
 Summary(pl):	%{_pearname} - klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
 Version:	1.4.3
-Release:	3
+Release:	3.2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	e1ac9ae6469584e6f887b6fd020b3ae1
 Patch0:		%{name}-tz-baltic-hasdst.patch
 URL:		http://pear.php.net/package/Date/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	rpm-php-pearprov >= 4.4.2-10.2
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -42,24 +42,36 @@ i ludzkim.
 
 Ta klasa ma w PEAR status: %{_status}.
 
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Group:		Development
+Requires:	%{name} = %{version}-%{release}
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
 %prep
-%setup -q -c
-cd %{_class}-%{version}
+%pear_package_setup
+cd ./%{php_pear_dir}
 %patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
-
-install %{_pearname}-%{version}/%{_class}.php $RPM_BUILD_ROOT%{php_pear_dir}/
-install %{_pearname}-%{version}/%{_class}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/{tests,TODO}
+%doc install.log
+%doc docs/%{_pearname}/TODO
 %dir %{php_pear_dir}/%{_class}
+%{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/*.php
 %{php_pear_dir}/%{_class}/*.php
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/tests/*
