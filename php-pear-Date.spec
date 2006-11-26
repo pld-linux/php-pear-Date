@@ -7,7 +7,7 @@ Summary:	%{_pearname} - date and time zone classes
 Summary(pl):	%{_pearname} - klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
 Version:	1.4.7
-Release:	1
+Release:	2
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
@@ -76,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc install.log
-%doc docs/%{_pearname}/TODO
+%doc docs/Date/docs/TODO
 %dir %{php_pear_dir}/%{_class}
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/*.php
