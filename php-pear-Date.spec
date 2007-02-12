@@ -4,7 +4,7 @@
 %define		_pearname	%{_class}
 
 Summary:	%{_pearname} - date and time zone classes
-Summary(pl):	%{_pearname} - klasy daty i stref czasowych
+Summary(pl.UTF-8):   %{_pearname} - klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
 Version:	1.4.7
 Release:	2
@@ -34,21 +34,21 @@ to convert date strings between Gregorian and Human calendar formats.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
+%description -l pl.UTF-8
 Podstawowe klasy do pokazywania i manipulowania datami, czasem i
-strefami czasowymi bez potrzeby u¿ywania timestamps, które s± ogromnym
-ograniczeniem programów w PHP. Zawiera konwersjê stref czasowych,
-czasu, daty, bazowane na Date::Calc. Nie zale¿y od 32-bitowych
-systemowych timestampów, wiêc mo¿e wy¶wietlaæ kalendarz oraz
-porównywaæ daty prze 1970 i po 2038 roku. Ten pakiet zawiera tak¿e
-klasy do konwersji ci±gów znakowych pomiêdzy kalendarzem gregoriañskim
+strefami czasowymi bez potrzeby uÅ¼ywania timestamps, ktÃ³re sÄ… ogromnym
+ograniczeniem programÃ³w w PHP. Zawiera konwersjÄ™ stref czasowych,
+czasu, daty, bazowane na Date::Calc. Nie zaleÅ¼y od 32-bitowych
+systemowych timestampÃ³w, wiÄ™c moÅ¼e wyÅ›wietlaÄ‡ kalendarz oraz
+porÃ³wnywaÄ‡ daty prze 1970 i po 2038 roku. Ten pakiet zawiera takÅ¼e
+klasy do konwersji ciÄ…gÃ³w znakowych pomiÄ™dzy kalendarzem gregoriaÅ„skim
 i ludzkim.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -57,7 +57,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
