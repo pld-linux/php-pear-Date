@@ -1,19 +1,18 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Date
-%define		_status		stable
+%define		_status		alpha
 %define		_pearname	%{_class}
 
 Summary:	%{_pearname} - date and time zone classes
 Summary(pl.UTF-8):	%{_pearname} - klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
-Version:	1.4.7
-Release:	3
+Version:	1.5.0a1
+Release:	0.1
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	6d34306e484d46c205002f8900ce6da3
-Patch0:		%{name}-tz-baltic-hasdst.patch
+# Source0-md5:	64b3b335313d1e2ca010c2be4fa02e08
 URL:		http://pear.php.net/package/Date/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -63,7 +62,6 @@ Testy dla PEAR::%{_pearname}.
 %prep
 %pear_package_setup
 cd ./%{php_pear_dir}
-%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
