@@ -3,7 +3,7 @@
 %define		_status		alpha
 %define		_pearname	%{_class}
 %define		subver	a1
-%define		rel		3
+%define		rel		4
 Summary:	%{_pearname} - date and time zone classes
 Summary(pl.UTF-8):	%{_pearname} - klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
@@ -20,6 +20,7 @@ BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-common >= 3:4.2
 Requires:	php-pear
+Suggests:	php-pear-Numbers_Words
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
