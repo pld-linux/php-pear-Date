@@ -1,22 +1,31 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Date
-%define		_status		stable
+%define		_status		alpha
 %define		_pearname	%{_class}
-
+%define		subver	a1
+%define		rel		4
 Summary:	%{_pearname} - date and time zone classes
-Summary(pl):	%{_pearname} - klasy daty i stref czasowych
+Summary(pl.UTF-8):	%{_pearname} - klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
-Version:	1.4.3
-Release:	2
+Version:	1.5.0
+Release:	0.%{subver}.%{rel}
+Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	e1ac9ae6469584e6f887b6fd020b3ae1
+Source0:	http://pear.php.net/get/%{_pearname}-%{version}%{subver}.tgz
+# Source0-md5:	64b3b335313d1e2ca010c2be4fa02e08
 URL:		http://pear.php.net/package/Date/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	php-pear-PEAR
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
+BuildRequires:	rpmbuild(macros) >= 1.300
+Requires:	php-common >= 3:4.2
 Requires:	php-pear
+Suggests:	php-pear-Numbers_Words
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# exclude optional dependencies
+%define		_noautoreq	'pear(Numbers/Words.*)'
 
 %description
 Generic classes for representation and manipulation of dates, times
@@ -29,34 +38,58 @@ to convert date strings between Gregorian and Human calendar formats.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
+%description -l pl.UTF-8
 Podstawowe klasy do pokazywania i manipulowania datami, czasem i
-strefami czasowymi bez potrzeby u¿ywania timestamps, które s± ogromnym
-ograniczeniem programów w PHP. Zawiera konwersjê stref czasowych,
-czasu, daty, bazowane na Date::Calc. Nie zale¿y od 32-bitowych
-systemowych timestampów, wiêc mo¿e wy¶wietlaæ kalendarz oraz
-porównywaæ daty prze 1970 i po 2038 roku. Ten pakiet zawiera tak¿e
-klasy do konwersji ci±gów znakowych pomiêdzy kalendarzem gregoriañskim
+strefami czasowymi bez potrzeby uÅ¼ywania timestamps, ktÃ³re sÄ… ogromnym
+ograniczeniem programÃ³w w PHP. Zawiera konwersjÄ™ stref czasowych,
+czasu, daty, bazowane na Date::Calc. Nie zaleÅ¼y od 32-bitowych
+systemowych timestampÃ³w, wiÄ™c moÅ¼e wyÅ›wietlaÄ‡ kalendarz oraz
+porÃ³wnywaÄ‡ daty prze 1970 i po 2038 roku. Ten pakiet zawiera takÅ¼e
+klasy do konwersji ciÄ…gÃ³w znakowych pomiÄ™dzy kalendarzem gregoriaÅ„skim
 i ludzkim.
 
 Ta klasa ma w PEAR status: %{_status}.
 
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
+Group:		Development/Languages/PHP
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+AutoProv:	no
+AutoReq:	no
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
+%description tests -l pl.UTF-8
+Testy dla PEAR::%{_pearname}.
+
 %prep
-%setup -q -c
+%pear_package_setup
+cd ./%{php_pear_dir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
-
-install %{_pearname}-%{version}/%{_class}.php $RPM_BUILD_ROOT%{php_pear_dir}/
-install %{_pearname}-%{version}/%{_class}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
+	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
+fi
+
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/{tests,TODO}
+%doc install.log optional-packages.txt
+%doc docs/Date/docs/TODO
 %dir %{php_pear_dir}/%{_class}
+%{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/*.php
 %{php_pear_dir}/%{_class}/*.php
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/tests/*
