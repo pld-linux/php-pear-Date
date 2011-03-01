@@ -3,7 +3,7 @@
 %define		_status		alpha
 %define		_pearname	%{_class}
 %define		subver	a1
-%define		rel		4
+%define		rel		5
 Summary:	%{_pearname} - date and time zone classes
 Summary(pl.UTF-8):	%{_pearname} - klasy daty i stref czasowych
 Name:		php-pear-%{_pearname}
