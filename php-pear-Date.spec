@@ -1,7 +1,7 @@
 %define		status	alpha
 %define		pearname Date
-%define		subver	a2
-%define		rel		2
+%define		subver	a3
+%define		rel		1
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - date and time zone classes
 Summary(pl.UTF-8):	%{pearname} - klasy daty i stref czasowych
@@ -11,11 +11,11 @@ Release:	0.%{subver}.%{rel}
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}%{subver}.tgz
-# Source0-md5:	4e072f39212abe97a419d520d3a0a460
+# Source0-md5:	47fc4f78fa8bb10eb9fea545f6ea8831
 URL:		http://pear.php.net/package/Date/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	rpmbuild(macros) >= 1.580
+BuildRequires:	rpmbuild(macros) >= 1.654
 Requires:	php(core) >= 4.2
 Requires:	php-pear
 Suggests:	php-pear-Numbers_Words
@@ -24,7 +24,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	pear(Numbers/Words.*)
+%define	_noautoreq_pear Numbers/Words.php
 
 %description
 Generic classes for representation and manipulation of dates, times
