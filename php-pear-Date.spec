@@ -1,7 +1,7 @@
 %define		status	alpha
 %define		pearname Date
 %define		subver	a3
-%define		rel		1
+%define		rel		2
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - date and time zone classes
 Summary(pl.UTF-8):	%{pearname} - klasy daty i stref czasowych
@@ -53,6 +53,8 @@ Ta klasa ma w PEAR status: %{status}.
 %pear_package_setup
 
 mv .%{php_pear_dir}/data/Date/README .
+
+mv .%{php_pear_dir}/buildPackageXML.php .
 
 %install
 rm -rf $RPM_BUILD_ROOT
