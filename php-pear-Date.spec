@@ -81,7 +81,3 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/*.php
 %{php_pear_dir}/%{_class}/*.php
-
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/*
