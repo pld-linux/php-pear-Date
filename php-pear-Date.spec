@@ -1,7 +1,7 @@
 %define		status	alpha
 %define		pearname Date
-%define		subver	a3
-%define		rel		2
+%define		subver	a4
+%define		rel		1
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - date and time zone classes
 Summary(pl.UTF-8):	%{pearname} - klasy daty i stref czasowych
@@ -11,7 +11,7 @@ Release:	0.%{subver}.%{rel}
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}%{subver}.tgz
-# Source0-md5:	47fc4f78fa8bb10eb9fea545f6ea8831
+# Source0-md5:	9d5ef5d450aee3cd8b661fbf0a1af95f
 URL:		http://pear.php.net/package/Date/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
