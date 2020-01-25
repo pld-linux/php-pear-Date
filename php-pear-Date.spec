@@ -2,7 +2,6 @@
 %define		pearname Date
 %define		subver	a4
 %define		rel		1
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - date and time zone classes
 Summary(pl.UTF-8):	%{pearname} - klasy daty i stref czasowych
 Name:		php-pear-%{pearname}
